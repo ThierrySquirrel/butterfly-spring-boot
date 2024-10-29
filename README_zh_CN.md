@@ -114,4 +114,3 @@ public class ProducerFilter implements Filter {
 }
 ```
 
-![Russian flag](https://user-images.githubusercontent.com/49895274/190373393-03ed96dd-3482-44ee-a074-82be460d9ae2.png)
