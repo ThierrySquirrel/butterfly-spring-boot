@@ -21,8 +21,8 @@
 <!--在pom.xml中添加依赖-->
         <dependency>
             <artifactId>butterfly-spring-boot-starter</artifactId>
-            <groupId>com.github.thierrysquirrel</groupId>
-            <version>1.4.1.4-RELEASE</version>
+            <groupId>io.github.thierrysquirrel</groupId>
+            <version>1.5.0.0-RELEASE</version>
         </dependency>
 ``` 
 

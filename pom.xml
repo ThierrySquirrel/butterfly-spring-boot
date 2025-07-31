@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.thierrysquirrel</groupId>
+    <groupId>io.github.thierrysquirrel</groupId>
     <artifactId>butterfly-spring-boot</artifactId>
     <packaging>pom</packaging>
-    <version>1.4.1.4-RELEASE</version>
+    <version>1.5.0.0-RELEASE</version>
 
     <name>butterfly-spring-boot</name>
     <description>butterfly-spring-boot</description>
@@ -16,7 +16,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.5</version>
+        <version>2.7.18</version>
         <relativePath/>
     </parent>
 
@@ -26,16 +26,17 @@
     </modules>
     <properties>
         <java.version>11</java.version>
-        <spring-cloud.version>2021.0.1</spring-cloud.version>
-        <pine-spring-boot-common.version>1.4.1.4-RELEASE</pine-spring-boot-common.version>
-        <guava.version>31.1-jre</guava.version>
-        <maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
-        <maven-gpg-plugin.version>3.0.1</maven-gpg-plugin.version>
+        <spring-cloud.version>2021.0.9</spring-cloud.version>
+        <pine-spring-boot-common.version>1.5.0.0-RELEASE</pine-spring-boot-common.version>
+        <guava.version>33.4.8-jre</guava.version>
+        <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
+        <maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
+        <central-publishing-maven-plugin.version>0.8.0</central-publishing-maven-plugin.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.thierrysquirrel</groupId>
+                <groupId>io.github.thierrysquirrel</groupId>
                 <artifactId>pine-spring-boot-common</artifactId>
                 <version>${pine-spring-boot-common.version}</version>
             </dependency>
@@ -45,12 +46,12 @@
                 <version>${guava.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.thierrysquirrel</groupId>
+                <groupId>io.github.thierrysquirrel</groupId>
                 <artifactId>butterfly-spring-boot-autoconfigure</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.thierrysquirrel</groupId>
+                <groupId>io.github.thierrysquirrel</groupId>
                 <artifactId>butterfly-spring-boot-starter</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -81,19 +82,6 @@
         <url>https://github.com/ThierrySquirrel/butterfly-spring-boot-starter</url>
         <tag>v${project.version}</tag>
     </scm>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <name>Maven Central Staging Repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
 
     <build>
         <plugins>
@@ -130,6 +118,15 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>${central-publishing-maven-plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>ossrh-staging-api</publishingServerId>
+                </configuration>
             </plugin>
         </plugins>
     </build>
