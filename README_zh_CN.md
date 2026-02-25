@@ -1,6 +1,6 @@
 # butterfly-spring-boot-starter
 
-蝴蝶RocketMQ   SpringBoot 版
+蝴蝶   SpringBoot 版
 
 [English](./README.md)
 
@@ -22,7 +22,7 @@
         <dependency>
             <artifactId>butterfly-spring-boot-starter</artifactId>
             <groupId>io.github.thierrysquirrel</groupId>
-            <version>1.5.0.1-RELEASE</version>
+            <version>1.5.0.2-RELEASE</version>
         </dependency>
 ``` 
 
@@ -30,9 +30,9 @@
  
  ```properties
  ## application.properties
-butterfly.butterfly-service-name="ServiceDemo" 服务名称
-butterfly.butterfly-service-url="127.0.0.1:5050" 蝴蝶服务地址
-butterfly.pine-service-url="127.0.0.1:6060" 松树服务地址,如果您需要集群 127.0.0.1:6060,127.0.0.1:6061,127.0.0.1:6062
+butterfly.butterfly-service-name=ServiceDemo 服务名称
+butterfly.butterfly-service-url=127.0.0.1:5050 蝴蝶服务地址
+butterfly.pine-service-url=127.0.0.1:6060 松树服务地址,如果您需要集群 127.0.0.1:6060,127.0.0.1:6061,127.0.0.1:6062
  ```
 
  # 启动Butterfly

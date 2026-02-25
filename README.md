@@ -1,6 +1,6 @@
 # butterfly-spring-boot-starter
 
-butterfly RocketMQ Spring Book Edition
+butterfly Spring Book Edition
 
 [中文](./README_zh_CN.md)
 
@@ -21,7 +21,7 @@ Support function:
         <dependency>
             <artifactId>butterfly-spring-boot-starter</artifactId>
             <groupId>io.github.thierrysquirrel</groupId>
-            <version>1.5.0.1-RELEASE</version>
+            <version>1.5.0.2-RELEASE</version>
         </dependency>
 ``` 
 
@@ -29,9 +29,9 @@ Support function:
  
  ```properties
  ## application.properties
-butterfly.butterfly-service-name="ServiceDemo" Service name
-butterfly.butterfly-service-url="127.0.0.1:5050" Butterfly service address
-butterfly.pine-service-url="127.0.0.1:6060" Pine service address,If you need a cluster 127.0.0.1:6060,127.0.0.1:6061,127.0.0.1:6062
+butterfly.butterfly-service-name=ServiceDemo Service name
+butterfly.butterfly-service-url=127.0.0.1:5050 Butterfly service address
+butterfly.pine-service-url=127.0.0.1:6060 Pine service address,If you need a cluster 127.0.0.1:6060,127.0.0.1:6061,127.0.0.1:6062
  ```
 
  # Start Butterfly

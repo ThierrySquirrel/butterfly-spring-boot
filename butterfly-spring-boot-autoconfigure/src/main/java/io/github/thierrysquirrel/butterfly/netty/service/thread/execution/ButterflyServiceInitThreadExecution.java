@@ -23,7 +23,9 @@ import io.github.thierrysquirrel.pine.common.netty.core.client.factory.constant.
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.EventLoopGroup;
+import io.netty.channel.MultiThreadIoEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.nio.NioIoHandler;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 
@@ -45,8 +47,8 @@ public class ButterflyServiceInitThreadExecution extends AbstractButterflyServic
 
     @Override
     protected void butterflyServiceInit(ThreadPoolExecutor butterflyServiceBusinessThreadPool, String butterflyServiceUrl) {
-        EventLoopGroup bossGroup = new NioEventLoopGroup ();
-        EventLoopGroup workerGroup = new NioEventLoopGroup ();
+        EventLoopGroup bossGroup = new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory());
+        EventLoopGroup workerGroup = new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory());
 
         ServerBootstrap b = new ServerBootstrap ();
 
